@@ -1,0 +1,64 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background-color: #28a745;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.btn-link {
+  text-decoration: none;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+/* dashboard.component.css */
+.container {
+  position: relative;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}

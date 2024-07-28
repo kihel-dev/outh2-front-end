@@ -1,0 +1,61 @@
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+
+.login-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.login-button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.login-button.google {
+  background-color: #4285F4;
+  color: white;
+}
+
+.login-button.google:hover {
+  background-color: #357ae8;
+  transform: translateY(-2px);
+}
+
+
+.login-button.github {
+  background-color: #333;
+  color: white;
+}
+
+.login-button.github:hover {
+  background-color: #24292e;
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(1px);
+}
+
+.login-button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+
+  <h2>User Information</h2>
+  
+  <!-- Display User Information -->
+  <div *ngIf="userInfo" class="user-info">
+    <p><strong>Full Name:</strong> {{ userInfo.displayName }}</p>
+    <p><strong>login:</strong> {{ userInfo.email }}</p>
+    <img [src]="userInfo.profilePicture" alt="Profile Picture" class="profile-picture" />
+  </div>
+
+  <!-- File Upload Section -->
+  <div *ngIf="currentFile" class="progress-container">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      [attr.aria-valuenow]="progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: progress + '%' }"
+    >
+      {{ progress }}%
+    </div>
+  </div>
+
+  <!-- File Selection and Upload -->
+  <div class="upload-section">
+    <label class="btn btn-primary">
+      <input type="file" (change)="selectFile($event)" />
+      Select File
+    </label>
+    <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+      Upload
+    </button>
+  </div>
+
+  <!-- Status Message -->
+  <div *ngIf="message" class="alert alert-info" role="alert">{{ message }}</div>
+
+  <!-- File List Section -->
+  <div class="card mt-3">
+    <div class="card-header">
+      List of Files
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let file of fileInfos | async">
+        <button class="btn btn-link" (click)="downloadFile(file.id)">
+          {{ file.name }}
+          <span *ngIf="isImage(file.type)" class="badge badge-info">Image</span>
+          <span *ngIf="isDocument(file.type)" class="badge badge-secondary">Document</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
