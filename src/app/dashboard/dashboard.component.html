@@ -1,0 +1,5 @@
+<div *ngIf="user">
+  <h2>Welcome, {{ user?.name }}!</h2> <!-- Use safe navigation operator -->
+  <p>Email: {{ user?.email }}</p> <!-- Use safe navigation operator -->
+  <button (click)="logout()">Logout</button>
+</div>
